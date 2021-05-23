@@ -11,11 +11,11 @@ const PORT = process.env.PORT || 3001;
 // sets up Express to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname + 'public')));
 
 // server route map
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
+require('./develop/routes/apiRoutes')(app);
+require('./develop/routes/htmlRoutes')(app);
 
 
 // sets up the listening port
